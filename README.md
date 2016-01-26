@@ -14,16 +14,11 @@ It also implements a database to save and retrieve the day and time of each upda
 * Clone this repository
 * Run the new_file_copier.py file in Python 3
 
-
-
-
 ## Technologies Used
 
 * Python 3
 * Tkinter
 * Sqlite3
-
-
 
 ### Legal
 
