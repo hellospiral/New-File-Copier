@@ -6,6 +6,17 @@ from stat import *
 
 global now, timestamp, conn, minute, lastUpdate
 
+# connect to database 'updates.db'
+conn = sqlite3.connect('updates.db')
+
+# create the "updates_info" table if it doesn't already exist
+conn.execute("CREATE TABLE IF NOT EXISTS updates_info(ID INTEGER PRIMARY KEY AUTOINCREMENT, TIMESTAMP TEXT);")
+
+# Retrieve the last update from the database
+cursor = conn.execute("SELECT MAX(ID), TIMESTAMP from updates_info")
+s = str(cursor.fetchall())
+lastUpdate =  s[7:22]
+
 # Function to get the path of the directory to read from
 def getReadPath():
     global src
@@ -33,7 +44,7 @@ def makeWindow():
 
     return win
 
-
+# Loop for the GUI
 win = makeWindow()
 win.title("File Mover")
 win.mainloop()
