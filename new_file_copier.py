@@ -15,7 +15,10 @@ conn.execute("CREATE TABLE IF NOT EXISTS updates_info(ID INTEGER PRIMARY KEY AUT
 # Retrieve the last update from the database
 cursor = conn.execute("SELECT MAX(ID), TIMESTAMP from updates_info")
 s = str(cursor.fetchall())
-lastUpdate =  s[5:21]
+if s[5] == "'":
+    lastUpdate =  s[6:21]
+else:
+    lastUpdate = s[5:21]
 
 # Function to get the path of the directory to read from
 def getReadPath():
