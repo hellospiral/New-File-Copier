@@ -1,6 +1,6 @@
 # New File Copier
 
-##### Python file transfer app, with a GUI in Tkinter and a database in Sqlite3, 1/25/15
+##### Python file transfer app, with a GUI in Tkinter and a database in Sqlite3, 1/25/16
 
 #### By **Matt Carlson**
 
